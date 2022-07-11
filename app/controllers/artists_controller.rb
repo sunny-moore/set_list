@@ -22,6 +22,11 @@ class ArtistsController < ApplicationController
     redirect_to '/artists'
   end
 
+  def destroy 
+    artist = Artist.find(params[:id])
+    artist.destroy
+    redirect_to '/artists'
+  end
 private #only avail inside the class defined in
   def artist_params
     params.permit(:name)
